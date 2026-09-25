@@ -1,0 +1,6 @@
+node_modules/
+.env
+database/gearbit.db
+uploads/
+npm-debug.log*
+.DS_Store

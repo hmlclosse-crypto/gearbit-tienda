@@ -1,0 +1,28 @@
+GEARBIT - Activar envío real de facturas por correo con Gmail
+
+1. Entra a tu cuenta de Google del correo que enviará las facturas.
+2. Activa la verificación en 2 pasos.
+3. Crea una contraseña de aplicación para Gmail.
+4. Abre el archivo .env que está dentro de la carpeta proyecto.
+5. Completa la línea EMAIL_PASS con la contraseña de aplicación.
+
+Ejemplo:
+EMAIL_USER=hmlclosse@gmail.com
+EMAIL_PASS=abcd efgh ijkl mnop
+EMAIL_FROM_NAME=GEARBIT
+WEBSITE_URL=http://localhost:3000
+
+IMPORTANTE:
+- No uses tu contraseña normal de Gmail.
+- No subas el archivo .env a GitHub.
+- Para Render, las mismas variables se colocan en Environment Variables:
+  EMAIL_USER
+  EMAIL_PASS
+  EMAIL_FROM_NAME
+  WEBSITE_URL
+
+Después de configurar, abre PowerShell en la carpeta proyecto y ejecuta:
+npm install
+npm start
+
+Cuando el cliente confirme un pedido, el sistema generará la factura digital y enviará el correo al email escrito por el cliente.

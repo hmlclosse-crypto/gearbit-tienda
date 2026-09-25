@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEARBIT - Tienda Online de Repuestos y Accesorios</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <a class="logo" href="index.html">GEAR<span>BIT</span></a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú"><i class="fa-solid fa-bars"></i></button>
+        <nav id="menuPrincipal">
+            <a href="index.html" class="active">Inicio</a>
+            <a href="sobre.html">Sobre Nosotros</a>
+            <a href="#video-soporte">Videos de Soporte</a>
+            <a href="ofertas.html">Ofertas</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+        <div class="header-icons">
+            <a href="#catalogo" title="Buscar"><i class="fa-solid fa-magnifying-glass"></i></a>
+            <button class="cart-icon" id="abrirCarrito" title="Carrito">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="contadorCarrito">0</span>
+            </button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <span class="etiqueta">Repuestos • Accesorios • Soporte</span>
+            <h1>Conecta, Repara, Evoluciona</h1>
+            <p>Compra repuestos y accesorios para celulares, revisa detalles técnicos y aprende con guías visuales paso a paso.</p>
+            <a class="btn-principal" href="#catalogo">Explorar Catálogo</a>
+        </div>
+    </section>
+
+    <section class="promo-slider" aria-label="Anuncios destacados">
+        <button class="slider-btn prev" id="prevSlide"><i class="fa-solid fa-chevron-left"></i></button>
+        <div class="slide activo">
+            <div>
+                <span class="etiqueta">Oferta destacada</span>
+                <h2>Accesorios con precios especiales</h2>
+                <p>Protege tu equipo con covers, vidrios templados y cargadores listos para entrega.</p>
+                <a href="ofertas.html" class="btn-secundario">Ver ofertas</a>
+            </div>
+            <img src="imagenes/banner-oferta.jpg" alt="Cover premium antigolpes">
+        </div>
+        <div class="slide">
+            <div>
+                <span class="etiqueta">Reparación móvil</span>
+                <h2>Pantallas para diferentes modelos</h2>
+                <p>Encuentra pantallas compatibles y revisa sus características antes de comprar.</p>
+                <a href="#catalogo" class="btn-secundario">Comprar ahora</a>
+            </div>
+            <img src="imagenes/banner-pantalla.jpg" alt="Pantalla OLED para iPhone">
+        </div>
+        <div class="slide">
+            <div>
+                <span class="etiqueta">Soporte técnico</span>
+                <h2>Guías visuales incluidas</h2>
+                <p>Algunos productos incluyen guía para instalación o mantenimiento básico.</p>
+                <a href="#video-soporte" class="btn-secundario">Buscar guía</a>
+            </div>
+            <img src="imagenes/banner-video.jpg" alt="Kit de herramientas para celulares">
+        </div>
+        <button class="slider-btn next" id="nextSlide"><i class="fa-solid fa-chevron-right"></i></button>
+        <div class="slider-dots" id="sliderDots"></div>
+    </section>
+
+    <section class="categorias-bar">
+        <button class="cat-item" data-categoria="Pantallas"><i class="fa-solid fa-mobile-screen"></i><span>Pantallas</span></button>
+        <button class="cat-item" data-categoria="Cargadores"><i class="fa-solid fa-bolt"></i><span>Cargadores</span></button>
+        <button class="cat-item" data-categoria="Covers"><i class="fa-solid fa-shield-halved"></i><span>Covers</span></button>
+        <button class="cat-item" data-categoria="Protectores"><i class="fa-solid fa-gem"></i><span>Protectores</span></button>
+        <button class="cat-item" data-categoria=""><i class="fa-solid fa-border-all"></i><span>Todo</span></button>
+    </section>
+
+    <section class="video-support" id="video-soporte">
+    <div class="video-container">
+        <span class="etiqueta etiqueta-oscura">Centro de Ayuda Visual</span>
+        <h2>Busca una guía de instalación</h2>
+        <p>Escribe el modelo de tu dispositivo para encontrar un tutorial de reparación.</p>
+
+        <div class="video-search-box">
+            <input type="text" id="modelSearch" placeholder="Ejemplo: iPhone 13, Samsung A54...">
+            <button id="btnGuia"><i class="fa-solid fa-play"></i> Buscar Guía</button>
+        </div>
+
+        <p class="mensaje-guia" id="mensajeGuia"></p>
+
+        <div class="grid-videos-guias" id="resultadosVideos">
+
+            <div class="video-guia-card" data-keywords="iphone 13 apple pantalla reparacion cambio display">
+                <iframe 
+                    src="https://www.youtube.com/embed/jyrbTnFhA0A"
+                    title="Guía de reparación de pantalla iPhone 13"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+
+                <div class="video-info">
+                    <h3>Reparación de pantalla iPhone 13</h3>
+                    <p>Video guía para cambio o reparación de pantalla de iPhone 13.</p>
+                </div>
+            </div>
+            <div class="video-guia-card" data-keywords="samsung a14 pantalla reparacion cambio display android">
+    <iframe 
+        src="https://www.youtube.com/embed/3xM0LV53AyI"
+        title="Guía de reparación de pantalla Samsung A14"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+    </iframe>
+
+    <div class="video-info">
+        <h3>Reparación de pantalla Samsung A14</h3>
+        <p>Video guía para cambio o reparación de pantalla de Samsung A14.</p>
+    </div>
+</div>
+<div class="video-guia-card" data-keywords="samsung a54 pantalla reparacion cambio display android">
+    <iframe 
+        src="https://www.youtube.com/embed/lNht6OykeFM"
+        title="Guía de reparación de pantalla Samsung A54"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+    </iframe>
+
+    <div class="video-info">
+        <h3>Reparación de pantalla Samsung A54</h3>
+        <p>Video guía para cambio o reparación de pantalla de Samsung A54.</p>
+    </div>
+</div>
+<div class="video-guia-card" data-keywords="redmi a1 xiaomi pantalla reparacion cambio display android">
+    <iframe 
+        src="https://www.youtube.com/embed/JTo8A8ux4Ds"
+        title="Guía de reparación de pantalla Redmi A1"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+    </iframe>
+
+    <div class="video-info">
+        <h3>Reparación de pantalla Redmi A1</h3>
+        <p>Video guía para cambio o reparación de pantalla de Redmi A1.</p>
+    </div>
+</div>
+<div class="video-guia-card" data-keywords="honor magic 5 lite pantalla reparacion cambio display android">
+    <iframe 
+        src="https://www.youtube.com/embed/8ScVx7emNgQ"
+        title="Guía de reparación de pantalla Honor Magic 5 Lite"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+    </iframe>
+
+    <div class="video-info">
+        <h3>Reparación de pantalla Honor Magic 5 Lite</h3>
+        <p>Video guía para cambio o reparación de pantalla de Honor Magic 5 Lite.</p>
+    </div>
+</div>
+<div class="video-guia-card" data-keywords="honor x6a honor x6 a pantalla reparacion cambio display android">
+    <iframe 
+        src="https://www.youtube.com/embed/UfUJrH0cLdw"
+        title="Guía de reparación de pantalla Honor X6a"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+    </iframe>
+
+    <div class="video-info">
+        <h3>Reparación de pantalla Honor X6a</h3>
+        <p>Video guía para cambio o reparación de pantalla de Honor X6a.</p>
+    </div>
+</div>
+<div class="video-guia-card" data-keywords="iphone 14 pro max apple pantalla reparacion cambio display">
+    <iframe 
+        src="https://www.youtube.com/embed/m0UJYyn_n6A"
+        title="Guía de reparación de pantalla iPhone 14 Pro Max"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+    </iframe>
+
+    <div class="video-info">
+        <h3>Reparación de pantalla iPhone 14 Pro Max</h3>
+        <p>Video guía para cambio o reparación de pantalla de iPhone 14 Pro Max.</p>
+    </div>
+</div>
+        </div>
+    </div>
+</section>
+
+    <main class="contenedor" id="catalogo">
+        <span class="etiqueta etiqueta-centrada">Catálogo GearBit</span>
+        <h2 class="titulo-seccion">Repuestos y accesorios destacados</h2>
+        <div class="toolbar-productos">
+            <input type="text" id="buscarProducto" placeholder="Buscar pantalla, cargador, cover, marca...">
+            <select id="filtroCategoria">
+                <option value="">Todas las categorías</option>
+                <option value="Pantallas">Pantallas</option>
+                <option value="Cargadores">Cargadores</option>
+                <option value="Herramientas">Herramientas</option>
+                <option value="Covers">Covers</option>
+                <option value="Protectores">Protectores</option>
+            </select>
+        </div>
+        <div class="filtros-marca" id="filtrosMarcaPantallas">
+    <button class="marca-btn activa" data-marca="">Todas</button>
+    <button class="marca-btn" data-marca="Samsung">Samsung</button>
+    <button class="marca-btn" data-marca="Apple">iPhone</button>
+    <button class="marca-btn" data-marca="Redmi">Redmi</button>
+    <button class="marca-btn" data-marca="Honor">Honor</button>
+</div>
+        <div class="grid-productos" id="gridProductos"></div>
+    </main>
+
+    <div class="modal" id="modalProducto">
+        <div class="modal-content modal-producto">
+            <button class="cerrar" id="cerrarModal">&times;</button>
+            <div class="detalle-grid">
+                <div>
+                    <img id="modalImagen" src="" alt="Imagen del producto">
+                    <div class="detalle-actions">
+                        <button class="btn-principal" id="modalAgregar">Añadir al carrito</button>
+                        <a class="btn-whatsapp" id="modalWhatsapp" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Consultar por WhatsApp</a>
+                    </div>
+                </div>
+                <div>
+                    <span class="etiqueta" id="modalCategoria"></span>
+                    <h2 id="modalNombre"></h2>
+                    <p class="marca" id="modalMarca"></p>
+                    <p class="precio-detalle" id="modalPrecio"></p>
+                    <p id="modalDescripcion"></p>
+                    <div class="detalle-bloque">
+                        <h3>Características</h3>
+                        <ul id="modalCaracteristicas"></ul>
+                    </div>
+                    <div class="detalle-bloque">
+                        <h3>Especificaciones</h3>
+                        <ul id="modalEspecificaciones"></ul>
+                    </div>
+                </div>
+            </div>
+            <div class="resenas-box">
+                <div>
+                    <h3>Reseñas de usuarios</h3>
+                    <div id="listaResenas"></div>
+                </div>
+                <form id="formResena" class="form-resena">
+                    <h3>Escribe tu reseña</h3>
+                    <input type="hidden" id="resenaProductoId">
+                    <label>Puntuación</label>
+                    <select id="resenaPuntuacion" required>
+                        <option value="5">★★★★★ - Excelente</option>
+                        <option value="4">★★★★ - Muy bueno</option>
+                        <option value="3">★★★ - Bueno</option>
+                        <option value="2">★★ - Regular</option>
+                        <option value="1">★ - Malo</option>
+                    </select>
+                    <label>Descripción</label>
+                    <textarea id="resenaComentario" rows="3" required placeholder="Cuenta tu experiencia con el producto"></textarea>
+                    <label>Nombre</label>
+                    <input id="resenaNombre" required placeholder="Tu nombre">
+                    <label>Correo</label>
+                    <input id="resenaCorreo" type="email" required placeholder="correo@ejemplo.com">
+                    <button class="btn-principal" type="submit">Enviar reseña</button>
+                    <p id="mensajeResena" class="mensaje-form"></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <aside class="carrito-panel" id="carritoPanel">
+        <div class="carrito-header">
+            <h2>Carrito</h2>
+            <button id="cerrarCarrito">&times;</button>
+        </div>
+        <div id="itemsCarrito" class="items-carrito"></div>
+        <div class="carrito-total">
+            <span>Total</span>
+            <strong id="totalCarrito">$0.00</strong>
+        </div>
+        <form id="formCheckout" class="checkout-form" enctype="multipart/form-data">
+            <h3>Datos para el pedido</h3>
+            <input id="clienteNombre" required placeholder="Nombre completo">
+            <input id="clienteCorreo" type="email" required placeholder="Correo electrónico">
+            <input id="clienteTelefono" required placeholder="Teléfono / WhatsApp">
+            <select id="metodoPago" required>
+    <option value="Visa demo">Tarjeta Visa demo</option>
+    <option value="Yappy QR">Yappy con QR</option>
+    <option value="Pago al recibir">Pago al recibir</option>
+</select>
+
+<div class="pago-extra" id="pagoVisa">
+    <h4>Datos de tarjeta Visa demo</h4>
+    <input id="tarjetaNombre" placeholder="Nombre del titular">
+    <input id="tarjetaNumero" maxlength="19" placeholder="Número de tarjeta demo">
+    <div class="pago-doble">
+        <input id="tarjetaFecha" maxlength="5" placeholder="MM/AA">
+        <input id="tarjetaCvv" maxlength="4" placeholder="CVV">
+    </div>
+    <small>Modo académico: no se realiza ningún cobro real.</small>
+</div>
+
+<div class="pago-extra" id="pagoYappy">
+    <h4>Pagar con Yappy</h4>
+    <p>Escanea el QR para realizar el pago y escribe la referencia o nombre usado en Yappy.</p>
+    <img class="qr-yappy" src="imagenes/qr-yappy.jpg" alt="Código QR de Yappy">
+    <input id="referenciaYappy" placeholder="Referencia o nombre usado en Yappy">
+    <label class="label-comprobante" for="comprobanteYappy">Comprobante de pago</label>
+    <input id="comprobanteYappy" type="file" accept="image/jpeg,image/png,image/webp">
+    <small>Formatos permitidos: JPG, JPEG, PNG o WEBP. Tamaño máximo: 5 MB.</small>
+</div>
+
+<button class="btn-principal" type="submit">Confirmar pedido</button>
+<p id="mensajeCheckout" class="mensaje-form"></p>
+        </form>
+    </aside>
+    <div class="overlay" id="overlay"></div>
+
+    <footer id="contacto">
+        <div class="footer-contenido">
+            <div>
+                <h3>GEARBIT</h3>
+                <p>Tu tienda de repuestos, accesorios y soporte técnico para celulares.</p>
+            </div>
+            <div>
+                <h4>Contacto</h4>
+                <p>Email: gearbit@gmail.com</p>
+                <p>Tel: +507 6599-3385</p>
+            </div>
+            <div>
+                <h4>Síguenos</h4>
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-youtube"></i>
+            </div>
+        </div>
+    </footer>
+
+    <script src="funciones.js"></script>
+</body>
+</html>

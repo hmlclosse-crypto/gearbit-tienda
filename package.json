@@ -1,0 +1,16 @@
+{
+  "name": "gearbit-tienda-online",
+  "version": "2.0.0",
+  "description": "Tienda online universitaria de repuestos y accesorios para celulares con Express y SQLite.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "nodemailer": "^9.0.3",
+    "sqlite3": "^5.1.7"
+  }
+}
